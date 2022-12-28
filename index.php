@@ -25,7 +25,7 @@
             <form action="add.php" method="POST" class="form">
 
                 <input type="text" name="task" id="task" placeholder="What you want to do.." class="task-input">
-                <button type="submit" name="send" class="btn">
+                <button type="submit" name="send" id="btn" class="btn">
                     Add
                 </button>
 
@@ -41,11 +41,13 @@
                 while($row = $query->fetch(PDO::FETCH_OBJ)){
                         echo '<li class="table1"><input type="checkbox" name="" id="'.$row->id.'" class="acc"><label for="'.$row->id.'" class="ii">'.$row->task.'</label></li>';
 
-                        echo '<li class="table2">
-                        <a href="edit.php" class="delete-link" id="'.$row->id.'">
+
+                        echo '<li class="table2" id="m'.$row->id.'">
+                        <a href="edit.php?id='.$row->id.'" " class="delete-link" target="_blank" id="m'.$row->id.'">
                             <img src="img/delete.png" alt="pictures" class="delete-img">
                         </a>
-                        <label for="'.$row->id.'" class="ii">'.$row->task.'</label></li>';
+                        <label id="m'.$row->id.'" class="ii">'.$row->task.'</label></li>';
+                        
                 }
                 echo '<ul class="do">'
                 
@@ -66,6 +68,8 @@
             </div>
 
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="js/mai.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

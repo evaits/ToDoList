@@ -137,6 +137,12 @@ input[type=checkbox]:checked + label {
     color: #8F98A8;
 }
 
+.delete-link:visited + label {
+    text-decoration-line: line-through;
+    font-feature-settings: 'liga' off;
+    color: #8F98A8;
+}
+
 .do {
     font-family: 'Inter';
     font-style: normal; 

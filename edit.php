@@ -1,6 +1,12 @@
 <?php
     require 'config.php';
 
-    header('Location: /todolist');
+    $id = $_GET['id'];
+    
+    $sql = 'DELETE FROM `tasks` WHERE `id` = ?';
+    $query = $pdo->prepare($sql);
+    $query->execute([$id]);
+
+    header('Location: /todolist/close.html');
 
 ?>
