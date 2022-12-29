@@ -7,6 +7,9 @@
     $query = $pdo->prepare($sql);
     $query->execute([$id]);
 
-    header('Location: /todolist/close.html');
+    echo '
+    <script>
+        window.close()
+    </script>'
 
 ?>

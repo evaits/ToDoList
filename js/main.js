@@ -18,18 +18,29 @@ var edit = document.getElementById('edit').onclick = function() {
     }
 
     else{
-        this.textContent = "Edit"
-        for(var l=0; l<table1.length; l++)table1[l].style.display='flex';
-        for(var e=0; e<table2.length; e++)table2[e].style.display='none';
-        location = location;
+        location. reload()
     }
     
     
-}
-jQuery(function($) {
-    $('.delete-link').on("click", function(){
-        var id =`#${$(this).prop('id')}`;
-        $(id).css('color', 'line-through')
-        console.log(id)
-      })
-});
+};
+
+(function() {
+    'use strict';
+    var cn = 'CheckBoxes', set = {}, cook = cookies(cn) || {};
+    cookies.expires = 10 * 24 * 3600;
+
+    function saveChecked() {
+    cook[this.id] = this.checked;
+    set[cn] = cook;
+
+    // Записываем в кукис текущее значение checked
+    cookies(set);
+    };
+
+    document.querySelectorAll('#ch input[type=checkbox]').forEach(function(r) {
+    r.onchange = saveChecked;
+    // Устанавливаем значение из кукиса
+    r.checked = !!cook[r.id];
+    
+    })
+})();

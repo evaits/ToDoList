@@ -35,21 +35,25 @@
 
                 require 'config.php';
 
-                echo '<ul class="do">';
+                echo '<div class="table"><ul class="do" id="ch">';
                 $query = $pdo->query('SELECT * FROM `tasks` ORDER BY `id` DESC');
 
                 while($row = $query->fetch(PDO::FETCH_OBJ)){
-                        echo '<li class="table1"><input type="checkbox" name="" id="'.$row->id.'" class="acc"><label for="'.$row->id.'" class="ii">'.$row->task.'</label></li>';
+                        echo '<li class="table1"><input type="checkbox" name="" id="'.$row->id.' ch" class="acc"><label for="'.$row->id.'" class="ii">'.$row->task.'</label></li>';
 
 
                         echo '<li class="table2" id="m'.$row->id.'">
                         <a href="edit.php?id='.$row->id.'" " class="delete-link" target="_blank" id="m'.$row->id.'">
-                            <img src="img/delete.png" alt="pictures" class="delete-img">
+                            <img src="img/delete.png" alt="pictures" class="delete-img" id="m'.$row->id.'">
                         </a>
-                        <label id="m'.$row->id.'" class="ii">'.$row->task.'</label></li>';
+                        <label for="m'.$row->id.'" class="ii">'.$row->task.'</label></li>';
                         
                 }
-                echo '<ul class="do">'
+                echo '<ul class="do">
+                <div id="element">
+                    <div class="overflow"></div>
+                </div>
+                </div>'
                 
            ?>
            
@@ -68,6 +72,8 @@
             </div>
 
     </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookiesjs/1.4.2/cookies.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="js/mai.js"></script>
     <script src="js/main.js"></script>
