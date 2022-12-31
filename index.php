@@ -39,20 +39,18 @@
                 $query = $pdo->query('SELECT * FROM `tasks` ORDER BY `id` DESC');
 
                 while($row = $query->fetch(PDO::FETCH_OBJ)){
-                        echo '<li class="table1"><input type="checkbox" name="" id="'.$row->id.' ch" class="acc"><label for="'.$row->id.'" class="ii">'.$row->task.'</label></li>';
+                        echo '<li class="table1"><input type="checkbox" name="" id="'.$row->id.'" class="acc"><label for="'.$row->id.'" class="ii">'.$row->task.'</label></li>';
 
 
                         echo '<li class="table2" id="m'.$row->id.'">
-                        <a href="edit.php?id='.$row->id.'" " class="delete-link" target="_blank" id="m'.$row->id.'">
+                        <a href="edit.php?id='.$row->id.'" class="delete-link" target="_blank" id="'.$row->id.'">
                             <img src="img/delete.png" alt="pictures" class="delete-img" id="m'.$row->id.'">
                         </a>
-                        <label for="m'.$row->id.'" class="ii">'.$row->task.'</label></li>';
+                        <label for="m'.$row->id.'" 
+                        id="m'.$row->id.'" class="ii">'.$row->task.'</label></li>';
                         
                 }
                 echo '<ul class="do">
-                <div id="element">
-                    <div class="overflow"></div>
-                </div>
                 </div>'
                 
            ?>

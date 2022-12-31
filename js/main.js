@@ -1,3 +1,4 @@
+// function edit
 var table1 = document.querySelectorAll('li.table1')
 var table2 = document.querySelectorAll('li.table2')
 var input = document.getElementById('task')
@@ -24,6 +25,7 @@ var edit = document.getElementById('edit').onclick = function() {
     
 };
 
+// save coockie
 (function() {
     'use strict';
     var cn = 'CheckBoxes', set = {}, cook = cookies(cn) || {};
@@ -44,3 +46,5 @@ var edit = document.getElementById('edit').onclick = function() {
     
     })
 })();
+
+
